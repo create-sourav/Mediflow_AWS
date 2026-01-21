@@ -46,15 +46,15 @@ Transform raw healthcare admission data into actionable clinical and operational
 
 ```
 ┌─────────────┐      ┌──────────────┐      ┌─────────────┐      ┌──────────────┐
-│   Raw Data  │ ───> │  AWS Glue    │ ───> │   Athena    │ ───> │   Power BI   │
-│   (S3)      │      │  (Crawler)   │      │  (SQL Views)│      │  (Dashboard) │
+│   Raw Data  │ ───> │  AWS Glue    │ ───> │   Athena    │ ───> │    ODBS      │
+│   (S3)      │      │  (Crawler)   │      │  (SQL Views)│      │  (Connector) │
 └─────────────┘      └──────────────┘      └─────────────┘      └──────────────┘
-                            │                      │
-                            ▼                      ▼
-                     ┌──────────────┐      ┌─────────────┐
-                     │ Glue Catalog │      │  ODBC DSN   │
-                     │  (Metadata)  │      │ (Connector) │
-                     └──────────────┘      └─────────────┘
+                            │                                         │
+                            ▼                                         ▼
+                     ┌──────────────┐                          ┌─────────────┐
+                     │ Glue Catalog │                          │  Power BI   │
+                     │  (Metadata)  │                          │ (Dashboard) │
+                     └──────────────┘                          └─────────────┘
 ```
 
 ### Component Roles
