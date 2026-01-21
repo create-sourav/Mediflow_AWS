@@ -1,6 +1,6 @@
 # Mediflow Healthcare Analytics Pipeline
 
-## Executive Summary
+## Summary
 
 End-to-end cloud-based healthcare data analytics solution leveraging AWS services (S3, Glue, Athena) and Power BI to analyze 25,000 hospital admissions, tracking severity patterns, length of stay, and 30-day readmissions across multiple cities and diagnoses.
 
