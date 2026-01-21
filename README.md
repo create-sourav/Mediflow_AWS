@@ -189,8 +189,9 @@ FROM ordered_admissions;
 ---
 
 ### 3. Clinical Analysis View (Extended)
-
 Full view includes all clinical attributes:
+
+```sql
 CREATE OR REPLACE VIEW mediflow_clinical_analysis_view AS
 WITH ordered_admissions AS (
     SELECT
@@ -258,8 +259,10 @@ SELECT
     date_diff('day', discharge_date, next_admission_date) AS days_to_readmission
 
 FROM ordered_admissions;
-
-### city-wise analysis table 
+```
+---
+### City-wise analysis table:
+```sql 
 CREATE OR REPLACE VIEW mediflow_city_analysis_view AS
 SELECT
     city, COUNT(DISTINCT patient_id) AS total_admissions,
@@ -272,7 +275,7 @@ SELECT
 
 FROM raw_mediflow_data
 GROUP BY city;
-
+```
 
 ---
 
